@@ -2,6 +2,7 @@ import './App.css';
 import React from "react"
 import RepetitionScreen from "./components/RepetitionExercises"
 import DurationScreen from "./components/DurationExercises"
+import LoginScreen from "./components/Login"
 
 
 const MENU = "menu"
@@ -11,7 +12,11 @@ const DURATION_SCREEN = "duration_screen"
 export default class MenuScreen extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { currentScreen: MENU, selectedItem: undefined }
+    this.state = { currentScreen: MENU, selectedItem: undefined, loggedin: true}
+  }
+  login = (status) => {
+    console.log(status)
+    this.setState({ loggedIn: status })
   }
   render() {
     let objects = [
@@ -53,6 +58,9 @@ export default class MenuScreen extends React.Component {
                 )}
 
               </ul>
+              
+            <button onClick={() => this.props.login(false)}>Log out</button>
+
             </center>
           </>
         )
@@ -84,4 +92,5 @@ export default class MenuScreen extends React.Component {
     return screen
   }
 }
+
 
