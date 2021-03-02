@@ -3,20 +3,18 @@ import React from "react"
 import RepetitionScreen from "./components/RepetitionExercises"
 import DurationScreen from "./components/DurationExercises"
 import LoginScreen from "./components/Login"
-
+import FoodScreen from "./components/Food"
 
 const MENU = "menu"
+const LOGIN_SCREEN = "login"
 const REPETITION_SCREEN = "repetition_screen"
 const DURATION_SCREEN = "duration_screen"
+const FOOD_SCREEN = "food_screen"
 
 export default class MenuScreen extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { currentScreen: MENU, selectedItem: undefined, loggedin: true}
-  }
-  login = (status) => {
-    console.log(status)
-    this.setState({ loggedIn: status })
+    this.state = { currentScreen: MENU, selectedItem: undefined }
   }
   render() {
     let objects = [
@@ -36,6 +34,8 @@ export default class MenuScreen extends React.Component {
       case MENU:
         screen = (
           <>
+           <button onClick={() => this.setState({ currentScreen: LOGIN_SCREEN })}>Log In</button>
+           <button onClick={() => this.setState({ currentScreen: FOOD_SCREEN })}>Calorie Tracker</button>
             <center>
               <h2>Exercises</h2>
               <p>+ Repetition Exercise</p>
@@ -58,9 +58,6 @@ export default class MenuScreen extends React.Component {
                 )}
 
               </ul>
-              
-            <button onClick={() => this.props.login(false)}>Log out</button>
-
             </center>
           </>
         )
@@ -85,12 +82,31 @@ export default class MenuScreen extends React.Component {
           </>
         )
         break
-      default:
-        screen = undefined
+        case FOOD_SCREEN:
+          screen = (
+            <>
+              <FoodScreen {...this.state.selectedItem}></FoodScreen>
+              <button onClick={() => this.setState({ currentScreen: MENU })}>
+                Back
+              </button>
+            </>
+          )
+          break
+        case LOGIN_SCREEN:
+          screen = (
+            <>
+              <LoginScreen></LoginScreen>
+              <button onClick={() => this.setState({ currentScreen: MENU })}>
+                Login
+              </button>
+            </>
+          )
+          break
+        default:
+        screen = undefined;
     }
-
+    
     return screen
   }
 }
-
 
