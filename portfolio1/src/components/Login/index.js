@@ -4,8 +4,13 @@ class LoginScreen extends React.Component {
     render() {
       return (
         <>
-          <h2>Please Log In</h2>
+          <h2>Log In</h2>
+          <p>Username:</p>
           <input name="username" ></input>
+          <br></br>
+          <p>Password:</p>
+          <input name="password" ></input>
+          <br></br>
         </>
       )
     }

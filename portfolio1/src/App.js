@@ -85,7 +85,7 @@ export default class MenuScreen extends React.Component {
         case FOOD_SCREEN:
           screen = (
             <>
-              <FoodScreen {...this.state.selectedItem}></FoodScreen>
+              <FoodScreen value={0} {...this.state.selectedItem}></FoodScreen>
               <button onClick={() => this.setState({ currentScreen: MENU })}>
                 Back
               </button>

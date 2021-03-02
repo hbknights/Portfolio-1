@@ -2,12 +2,12 @@ import React from "react"
 export default class FoodScreen extends React.Component {
     constructor(props) {
       super(props)
-      this.state = { value: this.props.value }
+      this.state = { value: parseInt(this.props.value,0) }
       
     }
-    calorieCounter(){
+    calorieCounter(totalPoints){
             this.setState((prevState) => ({
-                value: prevState.value + this.state.value
+                value: prevState.value + totalPoints
             }))
     }
     render(){
@@ -28,7 +28,7 @@ export default class FoodScreen extends React.Component {
                 {objects.map((obj, index) =>
                   <li key={index}>
                     <button onClick={() =>
-                      this.calorieCounter()
+                      this.calorieCounter(obj.value)
                     }
 
                     >
