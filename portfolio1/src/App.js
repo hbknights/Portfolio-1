@@ -40,7 +40,7 @@ export default class MenuScreen extends React.Component {
               <h2>Exercises</h2>
               <p>+ Repetition Exercise</p>
               <p>* Duration Exercise</p>
-              <ul style={{ "list-style-type": "none" }}>
+              <ul style={{ "listStyleType": "none" }}>
                 {objects.map((obj, index) =>
                   <li key={index}>
                     <button onClick={() =>

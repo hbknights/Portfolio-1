@@ -2,14 +2,16 @@ import React from "react"
 export default class FoodScreen extends React.Component {
     constructor(props) {
       super(props)
-      this.state = { points: this.props.points }
+      this.state = { value: this.props.value }
+      
     }
     calorieCounter(){
             this.setState((prevState) => ({
-                value: prevState.value + this.props.points
+                value: prevState.value + this.state.value
             }))
     }
     render(){
+      
         let objects = [
             { objType: "food", name: " Hard Boiled Eggs ", value: 0 },
             { objType: "food", name: "Cucumber", value: 0 },
@@ -22,7 +24,7 @@ export default class FoodScreen extends React.Component {
             <>
         <h2>Food Points</h2>
         <p>You  have 300 points per day</p>
-        <ul style={{ "list-style-type": "none" }}>
+        <ul style={{ "listStyleType": "none" }}>
                 {objects.map((obj, index) =>
                   <li key={index}>
                     <button onClick={() =>
@@ -37,7 +39,8 @@ export default class FoodScreen extends React.Component {
                 )}
 
               </ul>
-              Calories: {this.state.points}
+              Calories: {this.state.value}
+              <br></br>
         </>
         )
     }
