@@ -22,6 +22,8 @@ export default class FoodScreen extends React.Component {
           ]
         return(
             <>
+            <div style={{backgroundColor: "#90ee90"}}>
+              <center>
         <h2>Food Points</h2>
         <p>You  have 300 points per day</p>
         <ul style={{ "listStyleType": "none" }}>
@@ -41,6 +43,8 @@ export default class FoodScreen extends React.Component {
               </ul>
               Calories: {this.state.value}
               <br></br>
+              </center>
+              </div>
         </>
         )
     }

@@ -1,4 +1,4 @@
-import './App.css';
+import './App.css'
 import React from "react"
 import RepetitionScreen from "./components/RepetitionExercises"
 import DurationScreen from "./components/DurationExercises"
@@ -34,16 +34,17 @@ export default class MenuScreen extends React.Component {
       case MENU:
         screen = (
           <>
+          <div style={{backgroundColor: "#90ee90"}}>
            <button onClick={() => this.setState({ currentScreen: LOGIN_SCREEN })}>Log In</button>
            <button onClick={() => this.setState({ currentScreen: FOOD_SCREEN })}>Calorie Tracker</button>
             <center>
               <h2>Exercises</h2>
-              <p>+ Repetition Exercise</p>
-              <p>* Duration Exercise</p>
+              <p style={{color: "blue"}}>+ Repetition Exercise</p>
+              <p style={{color: "purple"}}>* Duration Exercise</p>
               <ul style={{ "listStyleType": "none" }}>
                 {objects.map((obj, index) =>
                   <li key={index}>
-                    <button onClick={() =>
+                    <button style={{color: obj.objType === "repetition" ? "blue" : "purple"}} onClick={() =>
                       this.setState({
                         currentScreen: obj.objType === "repetition" ? REPETITION_SCREEN : DURATION_SCREEN,
                         selectedItem: obj,
@@ -51,7 +52,7 @@ export default class MenuScreen extends React.Component {
                     }
 
                     >
-                      {obj.name}{obj.objType === "repetition" ? "+" : "*"}
+                      <strong>{obj.name}{obj.objType === "repetition" ? "+" : "*"}</strong>
                     </button>
                     <br /><br />
                   </li>
@@ -59,6 +60,7 @@ export default class MenuScreen extends React.Component {
 
               </ul>
             </center>
+            </div>
           </>
         )
         break
@@ -86,9 +88,11 @@ export default class MenuScreen extends React.Component {
           screen = (
             <>
               <FoodScreen value={0} {...this.state.selectedItem}></FoodScreen>
+              <center>
               <button onClick={() => this.setState({ currentScreen: MENU })}>
                 Back
               </button>
+              </center>
             </>
           )
           break
@@ -96,9 +100,11 @@ export default class MenuScreen extends React.Component {
           screen = (
             <>
               <LoginScreen></LoginScreen>
+              <center>
               <button onClick={() => this.setState({ currentScreen: MENU })}>
                 Login
               </button>
+              </center>
             </>
           )
           break

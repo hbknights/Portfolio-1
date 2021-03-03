@@ -46,12 +46,14 @@ export default class DurationScreen extends React.Component {
     render() {
         return (
             <>
+            <div style={{backgroundColor: "purple", color: "white"}}>
                 <h2>{this.props.name}</h2>
                 <p>Time how long you can do {this.props.name} for </p>
                 <p>Timer: {this.state.counter}:{this.state.miliseconds}</p>
                 <button onClick={() => this.start()} >Start</button>
                 <button onClick={() => this.onButtonStop()}>Stop</button>
                 <button onClick={() => this.onButtonClear()} >Reset</button>
+                </div>
             </>
 
         );
