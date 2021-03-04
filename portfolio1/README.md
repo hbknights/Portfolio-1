@@ -1,3 +1,10 @@
+# Features
+Added a food tracker for usesrs to calculate how many calories they have consumed. I have
+also added a login feature. I added a bunch of css for example color coding the different
+types of exercises.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
