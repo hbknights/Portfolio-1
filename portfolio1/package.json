@@ -1,7 +1,7 @@
 {
   "name": "portfolio1",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "http://hbknights.github.io/Portfolio-1",
   "dependencies": {
     "-": "0.0.1",
