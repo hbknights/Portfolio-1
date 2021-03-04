@@ -18,13 +18,13 @@ export default class RepetitionScreen extends React.Component {
     render() {
         return (
             <>
-            <div style={{backgroundColor: "blue", color: "white"}}>
+            
                 <h2>{this.props.name}</h2>
                 <p>Record how many {this.props.name} you completed </p>
                 <p>Reps: {this.state.value}</p>
                 <button onClick={() => this.addOne()}>Add One</button>
                 <button onClick={() => this.reset()}>Reset</button>
-                </div>
+                
             </>
         )
     }

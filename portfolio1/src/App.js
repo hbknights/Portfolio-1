@@ -67,44 +67,52 @@ export default class MenuScreen extends React.Component {
       case REPETITION_SCREEN:
         screen = (
           <>
+          <body style={{backgroundColor: "blue", color: "white"}}>
             <RepetitionScreen{...this.state.selectedItem}></RepetitionScreen>
+            <br></br>
             <button onClick={() => this.setState({ currentScreen: MENU })}>
               Back
             </button>
+            </body>
           </>
         )
         break
       case DURATION_SCREEN:
         screen = (
           <>
+          <body style={{backgroundColor: "purple", color: "white"}}>
             <DurationScreen {...this.state.selectedItem}></DurationScreen>
+            <br></br>
             <button onClick={() => this.setState({ currentScreen: MENU })}>
               Back
             </button>
+            </body>
           </>
         )
         break
         case FOOD_SCREEN:
           screen = (
             <>
-              <FoodScreen value={0} {...this.state.selectedItem}></FoodScreen>
-              <center>
-              <button onClick={() => this.setState({ currentScreen: MENU })}>
+            <body style={{backgroundColor: "#90ee90"}}>
+            <button onClick={() => this.setState({ currentScreen: MENU })}>
                 Back
               </button>
-              </center>
+              <FoodScreen value={0} {...this.state.selectedItem}></FoodScreen>
+              </body>
             </>
           )
           break
         case LOGIN_SCREEN:
           screen = (
             <>
+            <body style={{backgroundColor: "#90ee90"}}>
               <LoginScreen></LoginScreen>
               <center>
               <button onClick={() => this.setState({ currentScreen: MENU })}>
                 Login
               </button>
               </center>
+              </body>
             </>
           )
           break

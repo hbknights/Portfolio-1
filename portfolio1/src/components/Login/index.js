@@ -4,8 +4,6 @@ class LoginScreen extends React.Component {
     render() {
       return (
         <>
-       
-        <div style={{backgroundColor: "#90ee90"}}>
         <center>
           <h2>Log In</h2>
           <p>Username:</p>
@@ -15,7 +13,6 @@ class LoginScreen extends React.Component {
           <input name="password" ></input>
           <br></br>
           </center>
-          </div>
         </>
       )
     }

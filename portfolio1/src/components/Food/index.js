@@ -38,7 +38,7 @@ export default class FoodScreen extends React.Component {
           ]
         return(
             <>
-            <div style={{backgroundColor: "#90ee90"}}>
+            
               <center>
         <h2>Food Points</h2>
         <p>You  have 150 points per day</p>
@@ -61,7 +61,6 @@ export default class FoodScreen extends React.Component {
               </ul>
               
               </center>
-              </div>
         </>
         )
     }
